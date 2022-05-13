@@ -1,0 +1,111 @@
+@import "./normalize.css";
+@import "./reset.css";
+
+body {
+	font-family: 'Roboto';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+}
+
+.slider {
+  max-width: 100%;
+  text-align: center;
+}
+
+.slides {
+  padding: 1rem;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 30%;
+  overflow: hidden;
+}
+
+.inner-img {
+  display: flex;
+  width: 400%;
+  transition: all 0.8s ease 0s;
+}
+
+.slide {
+  width: 25%;
+}
+
+img {
+  width: 100%;
+}
+
+.under-img {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.inner-title {
+  display: flex;
+  flex: 0 0 auto;
+  width: 400%;
+  transition: all 0.8s ease 0s;
+}
+
+.slide-title {
+  width: 25%;
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.slide-title p {
+  margin-right: 40%;
+  word-wrap: break-word;
+}
+
+
+.controls {
+  flex: 0 0 40%;
+  z-index: 2;
+}
+
+.controls label {
+  display: inline-block;
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  background: red;
+  padding: 0.1rem;
+}
+
+#slide1:checked ~ .inner-img {
+  transform: translate(0%, 0%);
+}
+#slide2:checked ~ .inner-img {
+  transform: translate(-25%, 0%);
+}
+#slide3:checked ~ .inner-img {
+  transform: translate(-50%, 0%);
+}
+#slide4:checked ~ .inner-img {
+  transform: translate(-75%, 0%);
+}
+
+#slide1:checked ~ .under-img .inner-title {
+  transform: translate(85%, 0%);
+}
+#slide2:checked ~ .under-img .inner-title {
+  transform: translate(60%, 0%);
+}
+#slide3:checked ~ .under-img .inner-title {
+  transform: translate(35%, 0%);
+}
+#slide4:checked ~ .under-img .inner-title {
+  transform: translate(10%, 0%);
+}
