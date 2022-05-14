@@ -5,13 +5,14 @@ body {
 	font-family: 'Roboto';
 	font-weight: normal;
 	font-style: normal;
-	font-size: 1.25em;
+	font-size: 1.5em;
 	line-height: 1;
 	text-transform: none;
 	letter-spacing: normal;
 	direction: ltr;
   background: rgb(255, 255, 255);
   color: azure;
+  overflow: hidden;
 }
 
 .wrapper input {
@@ -19,12 +20,13 @@ body {
 }
 
 .slider {
-  max-width: 100%;
+  margin: 0 auto;
+  max-width: 95vh;
   text-align: center;
 }
 
 .slides {
-  margin: 0.5% 26%;
+  margin: 0.5%;
   padding: 0.5% 2%;
   background: rgb(5, 19, 44);
   border-radius: 1%;
@@ -57,6 +59,10 @@ img {
   align-items: flex-start;
 }
 
+.title-container {
+  overflow: hidden;
+}
+
 .inner-title {
   display: flex;
   flex: 0 0 auto;
@@ -71,15 +77,13 @@ img {
 }
 
 .slide-title p {
-  width: 60%;
   word-wrap: break-word;
 }
 
 .controls {
-  flex: 0 0 40%;
+  flex: 0 0 auto;
   z-index: 2;
   padding: 1rem 0.5rem 1.1rem;
-  background: rgba(5, 19, 44);
   display: flex;
   justify-content: flex-end;
 }
@@ -87,10 +91,9 @@ img {
 .controls label {
   display: inline-block;
   cursor: pointer;
-  width: 1.5rem;
-  min-height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   padding:  0.4rem;
-  margin: 0 0.5%;
 }
 
 label .label-mark {  
@@ -114,7 +117,7 @@ label .label-mark:active {
 #slide3:checked ~ .under-img label[for=slide3] .label-mark,
 #slide4:checked ~ .under-img label[for=slide4] .label-mark {
   background: rgb(11, 3, 3);
-  border: 0.1rem solid rgb(255, 255, 255);
+  border: 0.2rem solid rgb(255, 255, 255);
 }
 
 #slide1:checked ~ .inner-img {
@@ -131,14 +134,14 @@ label .label-mark:active {
 }
 
 #slide1:checked ~ .under-img .inner-title {
-  transform: translate(85%, 0%);
+  transform: translate(0%, 0%);
 }
 #slide2:checked ~ .under-img .inner-title {
-  transform: translate(60%, 0%);
+  transform: translate(-25%, 0%);
 }
 #slide3:checked ~ .under-img .inner-title {
-  transform: translate(35%, 0%);
+  transform: translate(-50%, 0%);
 }
 #slide4:checked ~ .under-img .inner-title {
-  transform: translate(10%, 0%);
+  transform: translate(-75%, 0%);
 }
