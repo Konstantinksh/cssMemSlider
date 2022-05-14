@@ -12,7 +12,6 @@ body {
 	direction: ltr;
   background: rgb(255, 255, 255);
   color: azure;
-  overflow: hidden;
 }
 
 .wrapper input {
@@ -20,13 +19,13 @@ body {
 }
 
 .slider {
-  margin: 0 auto;
-  max-width: 95vh;
+  margin: 2vh auto;
+  max-width: 90vh;
   text-align: center;
 }
 
 .slides {
-  margin: 0.5%;
+  margin: 0 2vh;
   padding: 0.5% 2%;
   background: rgb(5, 19, 44);
   border-radius: 1%;
@@ -73,7 +72,7 @@ img {
 .slide-title {
   width: 25%;
   text-align: left;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 .slide-title p {
@@ -83,9 +82,23 @@ img {
 .controls {
   flex: 0 0 auto;
   z-index: 2;
-  padding: 1rem 0.5rem 1.1rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 550px) {
+  .under-img {
+    flex-direction: column;
+  }
+
+  .controls {
+    align-self: center;
+  }
+
+  .title-container {
+    width: 100%;
+  }
 }
 
 .controls label {
