@@ -12,6 +12,8 @@ body {
 	direction: ltr;
   background: rgb(255, 255, 255);
   color: azure;
+  overflow:auto;
+  padding: 2vh 0 0 0;
 }
 
 .wrapper input {
@@ -19,8 +21,8 @@ body {
 }
 
 .slider {
-  margin: 2vh auto;
-  max-width: 90vh;
+  margin: 0 auto;
+  max-width: 85vh;
   text-align: center;
 }
 
@@ -28,7 +30,8 @@ body {
   margin: 0 2vh;
   padding: 0.5% 2%;
   background: rgb(5, 19, 44);
-  border-radius: 1%;
+  border-radius: 2%;
+  box-shadow: 0px -2px 51px 0px rgba(34, 60, 80, 0.67);
 }
 
 .wrapper {
@@ -40,7 +43,7 @@ body {
 .inner-img {
   display: flex;
   width: 400%;
-  transition: all 0.4s ease 0s;
+  transition: all 0.6s ease 0s;
 }
 
 .slide {
@@ -56,6 +59,7 @@ img {
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-start;
+  padding: 0.5rem 0 0 0;
 }
 
 .title-container {
@@ -66,13 +70,13 @@ img {
   display: flex;
   flex: 0 0 auto;
   width: 400%;
-  transition: all 0.45s ease 0s;
+  transition: all 0.6s ease 0s;
 }
 
 .slide-title {
   width: 25%;
   text-align: left;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 }
 
 .slide-title p {
@@ -82,31 +86,16 @@ img {
 .controls {
   flex: 0 0 auto;
   z-index: 2;
-  padding: 1rem 0;
   display: flex;
   justify-content: flex-end;
-}
-
-@media screen and (max-width: 550px) {
-  .under-img {
-    flex-direction: column;
-  }
-
-  .controls {
-    align-self: center;
-  }
-
-  .title-container {
-    width: 100%;
-  }
 }
 
 .controls label {
   display: inline-block;
   cursor: pointer;
-  width: 2rem;
-  height: 2rem;
-  padding:  0.4rem;
+  width: 3rem;
+  height: 3rem;
+  padding:  1rem;
 }
 
 label .label-mark {  
@@ -120,10 +109,40 @@ label:hover .label-mark {
   background: rgb(255, 255, 255);
 }
 
-label .label-mark:active {
+label:active .label-mark {
   transform: scale(0.5);
   background: rgb(0, 0, 0);
 }
+
+@media screen and (max-width: 550px), screen  and (max-height: 550px) {
+  .under-img {
+    flex-direction: column;
+  }
+
+  .controls {
+    align-self: center;
+  }
+
+  .title-container {
+    width: 100%;
+  }
+
+  body {
+    font-size: 1.25em;
+  }
+
+  .slider {
+    margin: 0.5vh auto;
+  }
+
+  .controls label {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding:  0.75rem;
+  }
+}
+
+
 
 #slide1:checked ~ .under-img label[for=slide1] .label-mark,
 #slide2:checked ~ .under-img label[for=slide2] .label-mark,
