@@ -31,7 +31,7 @@ body {
   padding: 0.5% 2%;
   background: rgb(5, 19, 44);
   border-radius: 2%;
-  box-shadow: 0px -2px 51px 0px rgba(34, 60, 80, 0.67);
+  box-shadow: 0 -0.12rem 3rem 0 rgba(34, 60, 80, 0.67);
 }
 
 .wrapper {
@@ -43,7 +43,7 @@ body {
 .inner-img {
   display: flex;
   width: 400%;
-  transition: all 0.6s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .slide {
@@ -51,7 +51,8 @@ body {
 }
 
 img {
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   border-radius: 2%;
 }
 
@@ -70,7 +71,7 @@ img {
   display: flex;
   flex: 0 0 auto;
   width: 400%;
-  transition: all 0.6s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 
 .slide-title {
@@ -81,6 +82,7 @@ img {
 
 .slide-title p {
   word-wrap: break-word;
+  padding: 0 0 0 2.5%;
 }
 
 .controls {
@@ -110,7 +112,7 @@ label:hover .label-mark {
 }
 
 label:active .label-mark {
-  transform: scale(0.5);
+  transform: scale(0.8);
   background: rgb(0, 0, 0);
 }
 
@@ -142,12 +144,18 @@ label:active .label-mark {
   }
 }
 
-
-
 #slide1:checked ~ .under-img label[for=slide1] .label-mark,
 #slide2:checked ~ .under-img label[for=slide2] .label-mark,
 #slide3:checked ~ .under-img label[for=slide3] .label-mark,
 #slide4:checked ~ .under-img label[for=slide4] .label-mark {
+  background: rgb(11, 3, 3);
+  border: 0.2rem solid rgb(121, 201, 223);
+}
+
+#slide1:checked ~ .under-img label[for=slide1]:hover .label-mark,
+#slide2:checked ~ .under-img label[for=slide2]:hover .label-mark,
+#slide3:checked ~ .under-img label[for=slide3]:hover .label-mark,
+#slide4:checked ~ .under-img label[for=slide4]:hover .label-mark {
   background: rgb(11, 3, 3);
   border: 0.2rem solid rgb(255, 255, 255);
 }
