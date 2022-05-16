@@ -1,0 +1,188 @@
+@import "./normalize.css";
+@import "./reset.css";
+
+body {
+	font-family: 'Roboto';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5em;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	direction: ltr;
+  background: rgb(255, 255, 255);
+  color: azure;
+  overflow:auto;
+  padding: 2vh 0 0 0;
+}
+
+.wrapper input {
+  display: none;
+}
+
+.slider {
+  margin: 0 auto;
+  max-width: 85vh;
+  text-align: center;
+}
+
+.slides {
+  margin: 0 2vh;
+  padding: 0.5% 2%;
+  background: rgb(5, 19, 44);
+  border-radius: 2%;
+  box-shadow: 0 -0.12rem 3rem 0 rgba(34, 60, 80, 0.67);
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: rgb(5, 19, 44);
+}
+
+.inner-img {
+  display: flex;
+  width: 400%;
+  transition: all 0.8s ease 0s;
+}
+
+.slide {
+  width: 25%;
+}
+
+img {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 2%;
+}
+
+.under-img {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  padding: 0.5rem 0 0 0;
+}
+
+.title-container {
+  overflow: hidden;
+}
+
+.inner-title {
+  display: flex;
+  flex: 0 0 auto;
+  width: 400%;
+  transition: all 0.8s ease 0s;
+}
+
+.slide-title {
+  width: 25%;
+  text-align: left;
+  padding: 0.75rem 0;
+}
+
+.slide-title p {
+  word-wrap: break-word;
+  padding: 0 0 0 2.5%;
+}
+
+.controls {
+  flex: 0 0 auto;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.controls label {
+  display: inline-block;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  padding:  1rem;
+}
+
+label .label-mark {  
+  background: rgb(23, 153, 209);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: border 0.3s;
+}
+
+label:hover .label-mark {  
+  background: rgb(255, 255, 255);
+}
+
+label:active .label-mark {
+  transform: scale(0.9);
+  background: rgb(232, 229, 229);
+}
+
+@media screen and (max-width: 550px), screen  and (max-height: 550px) {
+  .under-img {
+    flex-direction: column;
+  }
+
+  .controls {
+    align-self: center;
+  }
+
+  .title-container {
+    width: 100%;
+  }
+
+  body {
+    font-size: 1.25em;
+  }
+
+  .slider {
+    margin: 0.5vh auto;
+  }
+
+  .controls label {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding:  0.75rem;
+  }
+}
+
+#slide1:checked ~ .under-img label[for=slide1] .label-mark,
+#slide2:checked ~ .under-img label[for=slide2] .label-mark,
+#slide3:checked ~ .under-img label[for=slide3] .label-mark,
+#slide4:checked ~ .under-img label[for=slide4] .label-mark {
+  background: rgb(11, 3, 3);
+  border: 0.2rem solid rgb(121, 201, 223);
+}
+
+#slide1:checked ~ .under-img label[for=slide1]:hover .label-mark,
+#slide2:checked ~ .under-img label[for=slide2]:hover .label-mark,
+#slide3:checked ~ .under-img label[for=slide3]:hover .label-mark,
+#slide4:checked ~ .under-img label[for=slide4]:hover .label-mark {
+  background: rgb(11, 3, 3);
+  border: 0.2rem solid rgb(255, 255, 255);
+}
+
+#slide1:checked ~ .inner-img {
+  transform: translate(0%, 0%);
+}
+#slide2:checked ~ .inner-img {
+  transform: translate(-25%, 0%);
+}
+#slide3:checked ~ .inner-img {
+  transform: translate(-50%, 0%);
+}
+#slide4:checked ~ .inner-img {
+  transform: translate(-75%, 0%);
+}
+
+#slide1:checked ~ .under-img .inner-title {
+  transform: translate(0%, 0%);
+}
+#slide2:checked ~ .under-img .inner-title {
+  transform: translate(-25%, 0%);
+}
+#slide3:checked ~ .under-img .inner-title {
+  transform: translate(-50%, 0%);
+}
+#slide4:checked ~ .under-img .inner-title {
+  transform: translate(-75%, 0%);
+}
